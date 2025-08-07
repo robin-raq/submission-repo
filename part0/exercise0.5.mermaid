@@ -2,11 +2,11 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
     activate server
     server-->>browser: HTML document
     deactivate server
-    Note right of browser: The browser starts executing the JavaScript code that sents new note content and date to the server
+    Note right of browser: The browser starts executing the JavaScript code that get app data from the server
 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -14,7 +14,7 @@ sequenceDiagram
     server-->>browser: the css file
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
     activate server
     server-->>browser: the JavaScript file
     deactivate server
@@ -23,7 +23,7 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: [{  "content": "r u kidding me?","date": "2025-08-06T12:08:58.585Z"}, ... ]
+    server-->>browser: [{  "content": "ofjd", "date": "2025-08-07T10:02:13.215Z"}, ... ]
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
