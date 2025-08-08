@@ -6,12 +6,12 @@ sequenceDiagram
     activate server
     server-->>browser: HTML document
     deactivate server
-    Note right of browser: The browser starts executing the JavaScript code that get app data from the server
+    Note right of browser: The browser starts executing the JavaScript code that get app data for the page from the server
 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: the css file
+    server-->>browser: the CSS file
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
@@ -26,7 +26,7 @@ sequenceDiagram
     server-->>browser: [{  "content": "ofjd", "date": "2025-08-07T10:02:13.215Z"}, ... ]
     deactivate server
 
-    Note right of browser: The browser executes the callback function that renders the notes
+    Note right of browser: The browser executes the callback function that renders the notes without doing page reload
 
     browser->>server: GET https://fonts.googleapis.com/css?family=Lato:300,400,700,900
     activate server
